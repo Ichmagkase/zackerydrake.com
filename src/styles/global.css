@@ -1,0 +1,212 @@
+/*
+  Spacy Dark Theme - Based on Bear Blog's default CSS
+  Modified for a dark, cool-toned space aesthetic.
+*/
+
+:root {
+  /* Nebula Cyan for main links/highlights */
+  --accent: #4cc9f0;
+
+  /* Deep Violet for hover states or darker accents */
+  --accent-dark: #4361ee;
+
+  /* Headings (now white/starlight) */
+  --black: 248, 250, 252;
+
+  /* Meta text/borders (cool mid-tone blue-gray) */
+  --gray: 148, 163, 184;
+
+  /* Code blocks/Input backgrounds (Darker space blue) */
+  --gray-light: 23, 32, 51;
+
+  /* Body text (Cool light gray) */
+  --gray-dark: 203, 213, 225;
+
+  /* Background Gradient: Deep Space Blue fading to Black */
+  --gray-gradient: rgba(15, 23, 42, 100%), #02040a;
+
+  --box-shadow:
+    0 2px 6px rgba(0, 0, 0, 45%), 0 8px 24px rgba(0, 0, 0, 50%),
+    0 16px 32px rgba(0, 0, 0, 50%);
+}
+
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Atkinson";
+  src: url("/fonts/atkinson-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Atkinson", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  /* Deep space gradient background */
+  background: linear-gradient(to bottom, var(--gray-gradient)) no-repeat;
+  background-color: #02040a; /* Fallback for bottom of page */
+  background-size: 100% 600px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  color: rgb(var(--gray-dark));
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+main {
+  width: 720px;
+  max-width: calc(100% - 2em);
+  margin: auto;
+  padding: 3em 1em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5rem 0;
+  color: rgb(var(--black));
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.052em;
+  /* Optional: Adds a subtle glow to the main title */
+  text-shadow: 0 0 20px rgba(76, 201, 240, 0.2);
+}
+h2 {
+  font-size: 2.441em;
+}
+h3 {
+  font-size: 1.953em;
+}
+h4 {
+  font-size: 1.563em;
+}
+h5 {
+  font-size: 1.25em;
+}
+
+strong,
+b {
+  font-weight: 700;
+  color: rgb(var(--black)); /* Make bold text pop in white */
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+a:hover {
+  color: var(--accent-dark);
+}
+
+p {
+  margin-bottom: 1em;
+}
+.prose p {
+  margin-bottom: 2em;
+}
+
+textarea,
+input {
+  width: 100%;
+  font-size: 16px;
+  background-color: rgb(var(--gray-light));
+  color: rgb(var(--black));
+  border: 1px solid rgb(var(--gray));
+  padding: 8px;
+  border-radius: 4px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+th,
+td {
+  border-bottom: 1px solid rgb(var(--gray-light));
+  padding: 0.5em 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+code {
+  padding: 2px 5px;
+  background-color: rgb(var(--gray-light));
+  color: var(--accent); /* Makes inline code look like terminal text */
+  border-radius: 2px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+pre {
+  padding: 1.5em;
+  border-radius: 8px;
+  background-color: rgb(var(--gray-light));
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  overflow-x: auto;
+}
+pre > code {
+  all: unset;
+  color: rgb(
+    var(--gray-dark)
+  ); /* Resets pre block text to normal readable color */
+}
+
+blockquote {
+  border-left: 4px solid var(--accent);
+  background-color: rgba(
+    76,
+    201,
+    240,
+    0.05
+  ); /* Very subtle tint behind quotes */
+  padding: 10px 20px;
+  margin: 0;
+  font-size: 1.333em;
+  color: rgb(var(--gray)); /* Slightly dimmer text for quotes */
+}
+
+hr {
+  border: none;
+  border-top: 1px solid rgb(var(--gray));
+  opacity: 0.3;
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 18px;
+  }
+  main {
+    padding: 1em;
+  }
+}
+
+.sr-only {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}

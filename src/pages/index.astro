@@ -1,0 +1,26 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+      <h1>Welcome!</h1>
+      <p>I'm Zack! Whether you're a fellow software enthusiast, tech geek, recruiter, or just a curious passerby, welcome to my site!</p>
+      <p>Here you can find some tech projects I've been working on, things I have to talk about, and learn a bit more about me.</p>
+      <p>
+      This website is current in the midst of an overhaul! I'd recommend checking out the <a href="/about">about</a> page for now
+      while I work on adding more content :)
+      </p>
+		</main>
+		<Footer />
+	</body>
+</html>
